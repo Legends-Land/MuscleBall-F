@@ -1,0 +1,70 @@
+ /* Section Styling */
+        section {
+            padding: 80px 0;
+            position: relative;
+            background-color: var(--secondary-bg);
+            transition: background-color 0.5s ease;
+        }
+
+        #about {
+            background-color: var(--secondary-bg);
+        }
+
+        #about .about-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+        }
+
+        #about .about-image {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #about .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        #about .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        #about .about-text {
+            flex: 1;
+        }
+
+        #about .about-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+        }
+
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            color: var(--accent-red);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15px;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-text);
+        }

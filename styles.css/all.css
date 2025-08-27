@@ -1,0 +1,64 @@
+
+/* Global Styles and Theme Variables */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  /* Dark Theme Variables (Default) */
+  --primary-bg: #0d0d0d;
+  --secondary-bg: #1f1f1f;
+  --card-bg: #2b2b2b;
+  --primary-text: #fff;
+  --secondary-text: #bbb;
+  /* --accent-red: #e74c3c; */
+  --accent-red: #d02129;
+}
+
+.light-theme {
+  /* Light Theme Variables */
+  --primary-bg: #f4f4f4;
+  --secondary-bg: #e0e0e0;
+  --card-bg: #ffffff;
+  --primary-text: #333;
+  --secondary-text: #555;
+  /* --accent-red: #c0392b; */
+  --accent-red: #d02129;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+/* Responsive Design */
+       @media (min-width: 768px) {
+           .rules-content {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               align-items: flex-start;
+           }
+           .rules-column {
+               flex: 1;
+           }
+       }
+       @media (max-width: 768px) {
+           .hero-content h1 {
+               font-size: 3rem;
+           }
+           .hero-content p {
+               font-size: 1.2rem;
+           }
+           .nav-link {
+               margin: 0 10px;
+           }
+           #about .about-content {
+               flex-direction: column;
+           }
+       }
+
+       
