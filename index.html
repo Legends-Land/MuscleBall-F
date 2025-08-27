@@ -585,34 +585,35 @@
 
 
 
-                   document.getElementById("contactForm").addEventListener("submit", function(e) {
-                e.preventDefault(); // stop normal form action
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop normal form action
 
-                let form = this;
-                let formData = new FormData(form);
+    let form = this;
+    let formData = new FormData(form);
 
-                // 1. Send form data to Web3Forms
-                fetch("https://api.web3forms.com/submit", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                    // 2. Reset form (clear inputs)
-                    form.reset();
+    // 1. Send form data to Web3Forms
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // 2. Reset form (clear inputs)
+            form.reset();
 
-                    // 3. Open Stripe checkout in a new tab
-                    window.open("https://buy.stripe.com/test_3cI4gs1Cp7Do7FMaT7dEs00", "_blank");
-                    } else {
-                    alert("Form submission failed: " + data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("Something went wrong. Please try again.");
-                });
-                });
+            // 3. Redirect to Stripe checkout in the SAME tab
+            window.location.href = "https://buy.stripe.com/test_3cI4gs1Cp7Do7FMaT7dEs00";
+        } else {
+            alert("Form submission failed: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Something went wrong. Please try again.");
+    });
+});
+
 
                 const video = document.getElementById("heroVideo");
 const muteBtn = document.getElementById("muteBtn");
